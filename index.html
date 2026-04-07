@@ -151,6 +151,10 @@
             <div id="score-comment" class="mb-8 text-lg text-gray-700 italic font-medium px-4">Hebatnya anda!</div>
             <button onclick="showMenu()" class="btn-primary w-full bg-indigo-600 shadow-[0_4px_0_#312e81]">Kembali ke Menu Utama</button>
         </div>
+
+        <footer class="mt-8 text-center text-gray-400 text-xs">
+            <p>Ingin membangunkan kalkulator interaktif seperti ini mengikut keperluan anda? Hubungi web developer untuk perbincangan lanjut.</p>
+        </footer>
     </div>
 
     <script>
@@ -164,7 +168,7 @@
                 { q: "Kanak-kanak Islam dikehendaki berpuasa di bulan?", a: ["Syawal", "Ramadhan", "Rejab", "Muharram"], c: 1 },
                 { q: "Mengerjakan Haji adalah wajib bagi mereka yang?", a: ["Kaya sahaja", "Mampu", "Tua sahaja", "Kanak-kanak"], c: 1 },
                 { q: "Solat fardu dalam sehari semalam ada berapa waktu?", a: ["4 waktu", "6 waktu", "5 waktu", "3 waktu"], c: 2 },
-                { q: "Rukun Islam yang ketiga (3) ialah menunaikan?", a: ["Solat", "Puasa", "Haji", "Zakat"], c: 1 }, // Menggunakan susunan: Syahadah, Solat, Puasa, Zakat, Haji
+                { q: "Rukun Islam yang ketiga (3) ialah menunaikan?", a: ["Solat", "Puasa", "Haji", "Zakat"], c: 1 },
                 { q: "Zakat bermaksud mengeluarkan sebahagian ______ untuk diberikan kepada asnaf.", a: ["Tenaga", "Harta", "Makanan", "Masa"], c: 1 }
             ],
             iman: [
@@ -189,7 +193,6 @@
         let maxTime = 20;
         let isTimedMode = false;
 
-        // UI Listeners
         document.getElementById('timer-setting').addEventListener('input', (e) => {
             const val = e.target.value;
             document.getElementById('timer-val').innerText = val + 's';
@@ -209,7 +212,6 @@
                 questions = [...quizData.iman];
                 title = "Kuiz Rukun Iman";
             } else {
-                // Mod Gabungan (Cabaran Kilat)
                 questions = [...quizData.islam, ...quizData.iman];
                 title = "⚡ Cabaran Kilat (Gabungan)";
                 isTimedMode = true;
